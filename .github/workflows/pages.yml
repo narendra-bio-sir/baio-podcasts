@@ -1,7 +1,7 @@
-# Publishes this repo to GitHub Pages with a longer deploy timeout.
-# GitHub's built-in "Deploy from a branch" gives up after 10 minutes,
-# which isn't enough for ~800 MB of audio.
+# Publishes this repo to GitHub Pages.
 # Requires Settings -> Pages -> Source: "GitHub Actions".
+# Note: GitHub caps a Pages deploy at 10 minutes. If a deploy times out
+# after adding many new files, re-run it: already-synced files go quickly.
 name: Publish site
 
 on:
@@ -32,5 +32,3 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          timeout: 1800000
